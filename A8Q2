@@ -1,0 +1,9 @@
+node* bstInsert(Node* root, int key) {
+    if (root == NULL) return new Node(key);
+
+    if (key < root->data)
+        root->left = bstInsert(root->left, key);
+    else if (key > root->data)
+        root->right = bstInsert(root->right, key);
+
+    return root;
